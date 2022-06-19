@@ -7,6 +7,17 @@ package square
 // CalcSquare(10.0, SidesTriangle)
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
+type figure int
 
-func CalcSquare(sideLen float64, sidesNum #yourTypeNameHere#) float64 {
+func CalcSquare(sideLen float64, sidesNum figure) float64 {
+	const num = 3.14
+	switch sidesNum {
+	case 3:
+		return 0.5 * sideLen * (sideLen / 2)
+	case 4:
+		return sideLen * sideLen
+	case 0:
+		return num * sideLen * sideLen
+	}
+	return 0
 }
