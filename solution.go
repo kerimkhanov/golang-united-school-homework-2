@@ -11,15 +11,20 @@ import "math"
 // CalcSquare(10.0, SidesCircle)
 type figure int
 
+const (
+	SidesTriangle figure = 3
+	SidesSquare   figure = 4
+	SidesCircle   figure = 0
+)
+
 func CalcSquare(sideLen float64, sidesNum figure) float64 {
-	const num = math.Pi
 	switch sidesNum {
-	case 3:
+	case SidesTriangle:
 		return math.Sqrt(3) / 4 * (sideLen * sideLen)
-	case 4:
+	case SidesSquare:
 		return sideLen * sideLen
-	case 0:
-		return num * sideLen * sideLen
+	case SidesCircle:
+		return math.Pi * (sideLen * sideLen)
 	}
 	return 0
 }
