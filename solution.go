@@ -12,7 +12,7 @@ import "math"
 type figure int
 
 func CalcSquare(sideLen float64, sidesNum figure) float64 {
-	const num = 3.14
+	const num = math.Pi
 	switch sidesNum {
 	case 3:
 		return math.Sqrt(3) / 4 * (sideLen * sideLen)
